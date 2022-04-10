@@ -1,0 +1,5 @@
+Le MVP sera d'obtenir un 2048 avec pygame ou tkinter fonctionnel ou seulement dans la console 
+Pour cela mon programme sera telle que:
+- début donné des couleurs a chaque puissance de 2 type 2(jaune) 4(gris )
+- instancié les touche zqsd haut bas droite gauche ou avec les flèches 
+- créé le jeu dans la console avant ensuite créé l'interface 
