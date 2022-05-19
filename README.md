@@ -7,3 +7,9 @@ Premièrement je vais commencer à code le 2048 dans la console ensuite je vais 
 Voici le 2048 et on utilise les fleche pour se deplacer et donner cela:
 
 ![image](https://user-images.githubusercontent.com/90462072/169412342-e034e98d-c89a-4156-b229-bd3522aa2dac.png)
+
+
+
+
+
+Finalement jai utiliser Tkinter pour faire un 2048,
