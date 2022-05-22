@@ -75,11 +75,11 @@ class Projet_2048:
         for i in range(4):
             for j in range(4 - 1):
                 if self.taille_grille[i][j] == self.taille_grille[i][j + 1] and self.taille_grille[i][j] != 0:
-                    self.taille_grille[i][j] *= 2
+                    self.taille_grille[i][j] *= 2          # pour les puissance de 2 sinon les case ne s'aditionne pas 
                     self.taille_grille[i][j + 1] = 0
                     self.score += self.taille_grille[i][j]
                     self.merge = True
-    def grille_randum(self):
+    def grille_randum(self):                          # emplacement aleatoire de 2 au debut 
         cellule=[]
         for i in range(4):
             for j in range(4):
@@ -107,7 +107,7 @@ class Projet_2048:
                 if self.taille_grille[i][j]==0:
                     self.Projet_2048[i][j].config(text='',bg='azure4')
                 else:
-                    self.Projet_2048[i][j].config(text=str(self.taille_grille[i][j]),
+                    self.Projet_2048[i][j+0].config(text=str(self.taille_grille[i][j]),
                     bg=self.dico_couleur.get(str(self.taille_grille[i][j])),
                     fg=self.color.get(str(self.taille_grille[i][j])))
 class Jeux_2048:
