@@ -50,7 +50,7 @@ class Projet_2048:
         self.Jeux_2048Area.grid()
     def renverse(self):
         for ind in range(4):
-            i=0
+            i=0             # i et j sont long larg de la grille 
             j=3
             while(i<j):
                 self.taille_grille[ind][i],self.taille_grille[ind][j]=self.taille_grille[ind][j],self.taille_grille[ind][i]
@@ -80,12 +80,12 @@ class Projet_2048:
                     self.score += self.taille_grille[i][j]
                     self.merge = True
     def grille_randum(self):
-        cells=[]
+        cellule=[]
         for i in range(4):
             for j in range(4):
                 if self.taille_grille[i][j] == 0:
-                    cells.append((i, j))
-        curr=random.choice(cells)
+                    cellule.append((i, j))
+        curr=random.choice(cellule)
         i=curr[0]
         j=curr[1]
         self.taille_grille[i][j]=2
@@ -111,11 +111,11 @@ class Projet_2048:
                     bg=self.dico_couleur.get(str(self.taille_grille[i][j])),
                     fg=self.color.get(str(self.taille_grille[i][j])))
 class Jeux_2048:
-    def __init__(self,Jeux_2048panel):
+    def __init__(self,Jeux_2048panel):              # condition pour perdre et condition pour gagner
         self.Jeux_2048panel=Jeux_2048panel
-        self.end=False
+        self.end=False                             # initialisation de end et won a false
         self.won=False
-    def start(self):
+    def start(self): #creation de la grille aleatoirement grace a randum 
         self.Jeux_2048panel.grille_randum()
         self.Jeux_2048panel.grille_randum()
         self.Jeux_2048panel.grille_couleur()
@@ -123,10 +123,10 @@ class Jeux_2048:
         self.Jeux_2048panel.fenetre.mainloop()
     
     def link_keys(self,event):
-        if self.end or self.won:
+        if self.end or self.won:         # condition pour arrete le jeu gagner ou grille remplie 
             return
         self.Jeux_2048panel.compress = False
-        self.Jeux_2048panel.merge = False
+        self.Jeux_2048panel.merge = False                        
         self.Jeux_2048panel.moved = False
         presed_key=event.keysym
         if presed_key=='Up':                        # creation des touche fleche pour se deplacer up down rigth left 
